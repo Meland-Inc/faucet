@@ -56,6 +56,7 @@ export const switchToPolygronTestNetwork = async (web3Provider: Web3Provider) =>
 
 export const watchAsset = async (MELDAddress: string, web3Provider: Web3Provider) => {
 	return web3Provider.send('wallet_watchAsset', {
+		// @ts-ignore
 		type: 'ERC20',
 		options: {
 			address: MELDAddress,
