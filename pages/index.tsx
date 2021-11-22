@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { getWeb3Provider, switchToPolygronTestNetwork, watchAsset } from './web3';
+import { getWeb3Provider, switchToPolygronTestNetwork, watchAsset } from '../lib/web3';
 import { useCallback } from 'react';
 import { Faucet__factory, MELD, MELD__factory } from '../contracts';
 
