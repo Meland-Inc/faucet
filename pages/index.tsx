@@ -5,8 +5,8 @@ import { getWeb3Provider, switchToPolygronTestNetwork, watchAsset } from '../lib
 import { useCallback } from 'react';
 import { Faucet__factory, MELD, MELD__factory } from '../contracts';
 
-const MELDAddress = '0xe323E3A071909972c062C55624e3b61314a38C93';
-const FaucetAddress = '0x160c13a0975D3C216D38BB54a76DfbB758Bfb33C';
+const MELDAddress = '0x8d41fFe4Eb22b200765A5b5148b44D41c1CC6408';
+const FaucetAddress = '0xF7FCc8d6454200D7785eaB3dE56B986cDA6D26DE';
 
 const Home: NextPage = () => {
   const addToken = useCallback(async () => {
