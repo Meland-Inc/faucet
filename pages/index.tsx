@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import { getWeb3Provider, switchToPolygronTestNetwork, watchAsset } from '../lib/web3';
 import { useCallback } from 'react';
 import { Faucet__factory, MELD, MELD__factory } from '../contracts';
+import { whileList } from '../lib/isWhite';
 
 const MELDAddress = '0x8d41fFe4Eb22b200765A5b5148b44D41c1CC6408';
 const FaucetAddress = '0xF7FCc8d6454200D7785eaB3dE56B986cDA6D26DE';
@@ -36,6 +37,14 @@ const Home: NextPage = () => {
     if (network.chainId !== 80001) {
       await switchToPolygronTestNetwork(provider);
     }
+
+    const coinbase = await provider.getSigner().getAddress();
+
+    if (whileList.indexOf(coinbase) === -1) {
+      window.alert("You are not on the Alpha Test List Please join TG:                             t.me/melandaiWorld");
+      return;
+    }
+
     try {
       const instanceOfMELD = MELD__factory.connect(MELDAddress, provider.getSigner());
       const faucet = Faucet__factory.connect(FaucetAddress, provider.getSigner());
