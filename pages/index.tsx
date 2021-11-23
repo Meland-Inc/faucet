@@ -41,7 +41,12 @@ const Home: NextPage = () => {
       const faucet = Faucet__factory.connect(FaucetAddress, provider.getSigner());
       await faucet.recive();
     } catch(error) {
-      window.alert(JSON.stringify(error));
+      console.warn(error);
+      if (JSON.stringify(error).indexOf("24 hours") > -1) {
+        window.alert("You can only pick it up once in 24 hours");
+      } else {
+        window.alert(JSON.stringify(error));
+      }
     }
   }, []);
 
