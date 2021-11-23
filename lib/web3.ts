@@ -39,13 +39,15 @@ export const addPolygronTestNetwork = async (web3Provider: Web3Provider) => {
 
 export const switchToPolygronTestNetwork = async (web3Provider: Web3Provider) => {
 	try {
-		return web3Provider.send('wallet_switchEthereumChain', [
+		const tx = await web3Provider.send('wallet_switchEthereumChain', [
 			{
 				chainId: '0x13881'
 			}
 		]);
+		console.debug(tx);
 	} catch (error) {
-		await addPolygronTestNetwork(web3Provider);
+		console.debug(error);
+		await addPolygronTestNetwork(web3Provider)
 	}
 	return web3Provider.send('wallet_switchEthereumChain', [
 		{
