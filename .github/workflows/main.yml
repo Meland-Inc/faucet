@@ -23,7 +23,7 @@ jobs:
       - uses: peaceiris/actions-gh-pages@v3.7.3
         name: GitHub Pages Deploy
         with:
-          github_token: ${{ secrets.GH_PAT }}
+          github_token: ${{ github.token }}
           publish_dir: "out"
           user_name: "meland bot"
           user_email: "bot-noreply@meland.ai"
