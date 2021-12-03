@@ -6,8 +6,8 @@ import { useCallback } from 'react';
 import { Faucet__factory, MELD, MELD__factory } from '../contracts';
 import { check } from '../lib/isWhite';
 
-const MELDAddress = '0x8d41fFe4Eb22b200765A5b5148b44D41c1CC6408';
-const FaucetAddress = '0xF7FCc8d6454200D7785eaB3dE56B986cDA6D26DE';
+const MELDAddress = '0x7bAE33cCd1b4486a81F16093EE07C4A61C21d635';
+const FaucetAddress = '0x3236366FeE4c92dF4D4eAB97207b95960aD14b5C';
 
 const Home: NextPage = () => {
   const addToken = useCallback(async () => {
